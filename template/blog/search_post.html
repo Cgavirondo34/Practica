@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<h2>Buscar Post</h2>
+<form method="get">
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+{% if results %}
+    <h3>Resultados:</h3>
+    <ul>
+        {% for result in results %}
+        <li>{{ result.title }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}
